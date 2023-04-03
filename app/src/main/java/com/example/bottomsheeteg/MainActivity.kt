@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -88,7 +89,7 @@ class MainActivity : ComponentActivity() {
                 }
             ) {
                 Screen(
-                    name = "QWE",
+                    name = "Screen",
                     bt = if (showBt1) {
                         "Bt1"
                     } else {

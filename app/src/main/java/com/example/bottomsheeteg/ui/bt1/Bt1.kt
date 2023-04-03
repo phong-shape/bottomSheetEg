@@ -18,6 +18,10 @@ import com.example.bottomsheeteg.ui.PaddingBox
 import com.example.bottomsheeteg.ui.bt1.Bt1Actions
 import com.example.bottomsheeteg.ui.bt1.Bt1State
 
+
+/**
+ * Bottom sheet 1
+ */
 @Composable
 fun Bt1(
     state: Bt1State,

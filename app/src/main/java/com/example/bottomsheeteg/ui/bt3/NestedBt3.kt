@@ -10,6 +10,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
+
+/**
+ * Bottom sheet 3, nested in Bottom sheet 2
+ */
 @Composable
 fun NestedBt3() {
     Box(

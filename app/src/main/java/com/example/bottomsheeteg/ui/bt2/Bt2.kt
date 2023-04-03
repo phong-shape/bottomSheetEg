@@ -14,6 +14,9 @@ import com.example.bottomsheeteg.ui.bt2.Bt2State
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+/**
+ * Bottom sheet 2
+ */
 @Composable
 fun Bt2(
     state:Bt2State,
