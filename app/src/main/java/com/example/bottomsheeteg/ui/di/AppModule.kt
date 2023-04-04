@@ -2,12 +2,15 @@ package com.example.bottomsheeteg.ui.di
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import com.example.bottomsheeteg.ui.AppState
+import com.example.bottomsheeteg.ui.AppStateImp
 import com.example.bottomsheeteg.ui.bt1.Bt1Actions
 import com.example.bottomsheeteg.ui.bt1.Bt1ActionsImp
 import com.example.bottomsheeteg.ui.bt1.Bt1State
 import com.example.bottomsheeteg.ui.bt2.Bt2ActionsImp
 import com.example.bottomsheeteg.ui.bt2.Bt2State
 import com.example.bottomsheeteg.ui.bt2.Bt2Actions
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +20,12 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 interface AppModule {
+
+    @Binds
+    @Singleton
+    fun appState(i:AppStateImp): AppState
+
+
     companion object{
         @Provides
         @Singleton

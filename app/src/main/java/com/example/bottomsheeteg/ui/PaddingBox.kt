@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 @Composable
 fun PaddingBox() {
-    Box(Modifier.fillMaxWidth().height(600.dp).clip(RoundedCornerShape(10.dp)).background(
+    Box(Modifier.fillMaxWidth().height(500.dp).clip(RoundedCornerShape(12.dp)).background(
             Color.Gray)){
         Text("Padding box",modifier = Modifier.align(Alignment.Center))
     }

@@ -3,14 +3,16 @@ package com.example.bottomsheeteg.ui.bt2
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
+import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.LayoutCoordinates
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.dp
 import com.example.bottomsheeteg.ui.PaddingBox
-import com.example.bottomsheeteg.ui.bt2.Bt2Actions
-import com.example.bottomsheeteg.ui.bt2.Bt2State
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -22,12 +24,14 @@ fun Bt2(
     state:Bt2State,
     actions: Bt2Actions,
     openNestedBt3:()->Unit,
+    onMeasure:(layoutCoors:LayoutCoordinates)->Unit,
+    openScreenBlocker:()->Unit,
 ) {
     LaunchedEffect(key1 = state.isRun, block = {
         if(state.isRun){
             launch {
                 while(true){
-                    delay(500)
+                    delay(200)
                     actions.randomizeState()
                 }
             }
@@ -35,22 +39,59 @@ fun Bt2(
     })
 
 
-    Column(modifier = Modifier.padding(10.dp)) {
+    Column(modifier = Modifier
+        .onGloballyPositioned {
+            onMeasure(it)
+        }
+        .padding(10.dp)
+        .wrapContentHeight()
+    ) {
+        Text("Bt2")
         Text(text = state.text)
-        Box(modifier = Modifier
-            .width(30.dp)
-            .height(30.dp)
-            .background(state.color))
-        Button(onClick={
-            actions.switch()
-        }){
-            Text(if(state.isRun) "On" else "Off")
+        Row {
+            Box(modifier = Modifier
+                .width(30.dp)
+                .height(30.dp)
+                .background(state.color1))
+
+            Divider(
+                modifier = Modifier.width(8.dp),
+                color = Color.Transparent,
+            )
+
+            Box(modifier = Modifier
+                .width(30.dp)
+                .height(30.dp)
+                .background(state.color2))
+
+            Divider(
+                modifier = Modifier.width(8.dp),
+                color = Color.Transparent,
+            )
+
+            Box(modifier = Modifier
+                .width(30.dp)
+                .height(30.dp)
+                .background(state.color3))
         }
 
         Button(onClick={
-            openNestedBt3()
+            actions.toggleRandomizer()
         }){
-            Text("Open nested bt3")
+            Text(if(state.isRun) "On" else "Off")
+        }
+        Row {
+            Button(onClick={
+                openNestedBt3()
+            }){
+                Text("Open nested bt3")
+            }
+            Divider(color = Color.Transparent, modifier = Modifier.size(5.dp))
+            Button(onClick={
+                openScreenBlocker()
+            }){
+                Text("Open screen blocker")
+            }
         }
 
         PaddingBox()

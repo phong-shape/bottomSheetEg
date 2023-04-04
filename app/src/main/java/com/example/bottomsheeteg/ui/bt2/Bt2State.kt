@@ -6,14 +6,18 @@ import java.util.*
 
 data class Bt2State(
     val text:String,
-    val color: Color,
+    val color1: Color,
+    val color2: Color,
+    val color3: Color,
     val isRun:Boolean
 ){
     companion object{
         fun random():Bt2State{
             return Bt2State(
                 text = UUID.randomUUID().toString(),
-                color = Bt1State.randomColor(),
+                color1 = Bt1State.randomColor(),
+                color2 = Bt1State.randomColor(),
+                color3 = Bt1State.randomColor(),
                 isRun = true,
             )
         }

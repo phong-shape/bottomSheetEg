@@ -7,7 +7,7 @@ class Bt2ActionsImp(
     val bt2StateMs:MutableState<Bt2State>
 ): Bt2Actions {
     val state by bt2StateMs
-    override fun switch() {
+    override fun toggleRandomizer() {
         bt2StateMs.value = state.copy(
             isRun = !state.isRun
         )

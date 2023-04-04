@@ -11,6 +11,24 @@ data class Bt1State(
     val num2:Int,
     val total:Int? = null,
 ) {
+
+    val num1Text:String get(){
+        if(num1==0){
+            return ""
+        }else{
+            return num1.toString()
+        }
+    }
+
+    val num2Text:String get(){
+        if(num2==0){
+            return ""
+        }else{
+            return num2.toString()
+        }
+    }
+
+
     companion object{
         fun randomColor():Color{
             val rnd = Random

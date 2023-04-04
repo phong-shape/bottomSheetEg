@@ -27,39 +27,40 @@ fun Bt1(
     state: Bt1State,
     actions: Bt1Actions
 ) {
-        Column(modifier = Modifier.fillMaxWidth().padding(10.dp)) {
-            Row {
-                BasicTextField(value = "${state.num1}", onValueChange = {
-                    val newNum = it.toIntOrNull()
-                    if (newNum != null) {
-                        actions.updateNum1(newNum)
-                    }
-                })
-                Text("+")
-                BasicTextField(value = "${state.num2}", onValueChange = {
-                    val newNum = it.toIntOrNull()
-                    if (newNum != null) {
-                        actions.updateNum2(newNum)
-                    }
-                })
-                Text("=")
-                if(state.total!=null){
-                    Text("${state.total}")
-                }
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+    ) {
+        Text("Bt1")
+        Row {
+            BasicTextField(value = state.num1Text, onValueChange = {
+                val newNum = it.toIntOrNull() ?: 0
+                actions.updateNum1(newNum)
+            })
+            Text("+")
+            BasicTextField(value = state.num2Text, onValueChange = {
+                val newNum = it.toIntOrNull() ?: 0
+                actions.updateNum2(newNum)
+            })
+            Text("=")
+            if (state.total != null) {
+                Text("${state.total}")
             }
-
-            Button(
-                onClick = {
-                    actions.add()
-                },
-                colors = ButtonDefaults.buttonColors(
-                    backgroundColor = state.buttonColor
-                )
-            ) {
-                Text("Add number")
-            }
-
-            PaddingBox()
-
         }
+
+        Button(
+            onClick = {
+                actions.add()
+            },
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = state.buttonColor
+            )
+        ) {
+            Text("Add number")
+        }
+
+        PaddingBox()
+
+    }
 }
