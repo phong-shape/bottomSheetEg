@@ -3,8 +3,9 @@ package com.example.bottomsheeteg
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.bottomsheeteg.ui.AppState
-import com.example.bottomsheeteg.ui.AppView
+import com.example.bottomsheeteg.bottom_sheet_eg.BottomSheetAppState
+import com.example.bottomsheeteg.bottom_sheet_eg.BottomSheetAppView
+import com.example.bottomsheeteg.drawing.DrawingScreen
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -12,12 +13,13 @@ import javax.inject.Inject
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var appState: AppState
+    lateinit var appState: BottomSheetAppState
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppView(state = appState)
+            BottomSheetAppView(state = appState)
+//            DrawingScreen()
         }
     }
 }

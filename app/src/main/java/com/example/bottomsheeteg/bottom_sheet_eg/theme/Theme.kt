@@ -1,4 +1,4 @@
-package com.example.bottomsheeteg.ui.theme
+package com.example.bottomsheeteg.bottom_sheet_eg.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

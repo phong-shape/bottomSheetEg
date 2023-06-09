@@ -1,22 +1,14 @@
-package com.example.bottomsheeteg.ui.theme
+package com.example.bottomsheeteg.bottom_sheet_eg.bt1
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
-import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.bottomsheeteg.ui.PaddingBox
-import com.example.bottomsheeteg.ui.bt1.Bt1Actions
-import com.example.bottomsheeteg.ui.bt1.Bt1State
+import com.example.bottomsheeteg.bottom_sheet_eg.PaddingBox
 
 
 /**
@@ -29,7 +21,7 @@ fun Bt1(
 ) {
     Column(
         modifier = Modifier
-            .fillMaxWidth()
+            .width(440.dp)
             .padding(10.dp)
     ) {
         Text("Bt1")
@@ -60,7 +52,7 @@ fun Bt1(
             Text("Add number")
         }
 
-        PaddingBox()
+        PaddingBox(70)
 
     }
 }

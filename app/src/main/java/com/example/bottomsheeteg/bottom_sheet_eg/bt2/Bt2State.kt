@@ -1,7 +1,7 @@
-package com.example.bottomsheeteg.ui.bt2
+package com.example.bottomsheeteg.bottom_sheet_eg.bt2
 
 import androidx.compose.ui.graphics.Color
-import com.example.bottomsheeteg.ui.bt1.Bt1State
+import com.example.bottomsheeteg.bottom_sheet_eg.bt1.Bt1State
 import java.util.*
 
 data class Bt2State(

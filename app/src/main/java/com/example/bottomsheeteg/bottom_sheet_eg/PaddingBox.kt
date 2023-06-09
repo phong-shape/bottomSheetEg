@@ -1,25 +1,21 @@
-package com.example.bottomsheeteg.ui.bt3
+package com.example.bottomsheeteg.bottom_sheet_eg
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-
-
-/**
- * Bottom sheet 3, nested in Bottom sheet 2
- */
 @Composable
-fun NestedBt3() {
-    Box(
-         modifier = Modifier.fillMaxWidth().height(200.dp).background(Color.Red.copy(alpha=0.5f))
-    ){
-        Text("Nested Bt3", modifier = Modifier.align(Alignment.Center))
+fun PaddingBox(height:Int = 500) {
+    Box(Modifier.fillMaxWidth().height(height.dp).clip(RoundedCornerShape(12.dp)).background(
+            Color.Gray)){
+        Text("Padding box",modifier = Modifier.align(Alignment.Center))
     }
 }

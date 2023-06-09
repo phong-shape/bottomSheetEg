@@ -1,4 +1,4 @@
-package com.example.bottomsheeteg.ui.bt2
+package com.example.bottomsheeteg.bottom_sheet_eg.bt2
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue

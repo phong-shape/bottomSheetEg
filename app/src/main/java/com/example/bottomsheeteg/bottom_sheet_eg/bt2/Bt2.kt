@@ -1,4 +1,4 @@
-package com.example.bottomsheeteg.ui.bt2
+package com.example.bottomsheeteg.bottom_sheet_eg.bt2
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.dp
-import com.example.bottomsheeteg.ui.PaddingBox
+import com.example.bottomsheeteg.bottom_sheet_eg.PaddingBox
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -44,7 +44,9 @@ fun Bt2(
             onMeasure(it)
         }
         .padding(10.dp)
+        .width(380.dp)
         .wrapContentHeight()
+//        .border(2.dp,Color.Red)
     ) {
         Text("Bt2")
         Text(text = state.text)

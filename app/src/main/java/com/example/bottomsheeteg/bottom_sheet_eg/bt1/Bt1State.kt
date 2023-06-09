@@ -1,4 +1,4 @@
-package com.example.bottomsheeteg.ui.bt1
+package com.example.bottomsheeteg.bottom_sheet_eg.bt1
 
 import androidx.compose.ui.graphics.Color
 import java.util.*
